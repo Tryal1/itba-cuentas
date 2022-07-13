@@ -1,0 +1,23 @@
+h1 { color: #111; 
+    font-family: Tahoma, sans-serif;
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: left; }
+
+label {
+    color: #6695cb;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+    width: 130px;
+    
+    }
+
+#button {
+    padding: 5px;
+    margin-left: 10px;
+    font-family: Tahoma, sans-serif;
+    border: 1px solid gray;
+    background-color:#6695cb;
+    border-radius: 5px;
+    }
