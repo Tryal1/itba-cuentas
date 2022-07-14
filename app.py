@@ -19,7 +19,6 @@ def generar_reporte():
         print(tipo_operacion, estado_operacion, tipo_cuenta)
     
         return render_template("index.html")
-
     else:
 
         print("No se ha recibido ningun dato")
