@@ -1,50 +1,48 @@
 from flask import Flask, render_template, request
 from reporting import get_report, get_matches
-import json
 
+# se instancia el objeto Flask, con el nombre de la aplicación
 app = Flask(__name__)
 
-# se carga el template html
-
-
+# se define la ruta de la aplicación, que es la raiz de la aplicación
 @app.route('/')
 def index():
+
     return render_template("index.html")
 
-# @app.route('/reporting')
-# def reporting():
-#   return render_template("usuarios.html")
-
-# se acepta input del usuario
-
-
+# se acepta input del usuario, y se llama a la función get_report, que se encuentra en reporting.py
 @app.route('/', methods=["GET", "POST"])
 def generar_reporte():
 
     if request.method == "POST":
 
-        tipo_operacion = request.form["tipo_operacion"]
-        estado_operacion = request.form["estado_operacion"]
-        tipo_cuenta = request.form["tipo_cuenta"]
+        try: 
 
-        print(tipo_operacion, estado_operacion, tipo_cuenta)
-        get_matches(tipo_operacion,estado_operacion,tipo_cuenta=tipo_cuenta)
+            tipo_operacion = request.form["tipo_operacion"].lower()
+            estado_operacion = request.form["estado_operacion"].upper()
+            tipo_cuenta = request.form["tipo_cuenta"].lower()
 
-        # se llama a la funcion que genera el reporte
-        get_report(tipo_operacion, estado_operacion, tipo_cuenta)
+            # se filtran las transacciones que coincidan con los filtros
+            transacciones = get_matches(tipo_operacion, estado_operacion, tipo_cuenta)
 
-        # time.sleep(1)
+            # se llama a la funcion que genera el reporte, en base a las transacciones filtradas    
+            get_report(tipo_operacion, estado_operacion, tipo_cuenta, transacciones)
 
-        return render_template("reporte.html")
+            # se carga el template html, con el contenido del reporte
+            return render_template("reporte.html")
 
-       # return render_template("index.html")
+        except:
+            
+            # en caso de que haya un error, se carga la página principal de nuevo
+            return render_template("index.html")
+  
 
-    else:
+# @app.route('/generar_usuario')
+# def reporting():
 
-        print("No se ha recibido ningun dato")
-
-        return render_template("index.html")
+#     return render_template("usuarios.html")
 
 
 if __name__ == '__main__':
+
     app.run(debug=True)
