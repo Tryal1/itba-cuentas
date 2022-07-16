@@ -1,12 +1,12 @@
 import json
 
-def get_matches(tipo_cuenta):
-    if tipo_cuenta == "Black":
-
-        with open("static/json/eventos_black.json") as f:
-            data = json.load(f)
-            print(data)
-
+def get_matches(tipo_operacion,estado_operacion,tipo_cuenta):
+    with open(f"static/json/eventos_{tipo_cuenta}.json") as f:
+        data = json.load(f)
+        for archivo in data[tipo_operacion]:
+            if(archivo['estado'] == estado_operacion):
+                print(archivo)
+               
 
 
 def get_report(tipo_operacion, estado_operacion, tipo_cuenta):
@@ -34,7 +34,7 @@ def get_report(tipo_operacion, estado_operacion, tipo_cuenta):
     </html>
     """
 
-    with open(r"C:\Users\Benja\Desktop\sprint5\templates\reporte.html", "w") as f:
+    with open("templates/reporte.html", "w") as f:
         f.write(html)
 
 

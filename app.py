@@ -28,7 +28,7 @@ def generar_reporte():
         tipo_cuenta = request.form["tipo_cuenta"]
 
         print(tipo_operacion, estado_operacion, tipo_cuenta)
-        get_matches(tipo_cuenta=tipo_cuenta)
+        get_matches(tipo_operacion,estado_operacion,tipo_cuenta=tipo_cuenta)
 
         # se llama a la funcion que genera el reporte
         get_report(tipo_operacion, estado_operacion, tipo_cuenta)
