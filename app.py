@@ -56,9 +56,11 @@ def generar_data():
         direccion_ciudad = request.form['direccion_ciudad'].lower()
         direccion_provincia = request.form['direccion_provincia'].lower()
         direccion_pais = request.form['direccion_pais'].lower()
-        regustro = Cliente(nombre, apellido, dni, tipo_cuenta, direccion_calle,
+        registro = Cliente(nombre, apellido, dni, tipo_cuenta, direccion_calle,
                            direccion_numero, direccion_ciudad, direccion_provincia, direccion_pais)
-        regustro.guardarDatos()
+        registro.guardarDatos()
+        registro.guardarDatosCsv()
+        
         return render_template("usuarios.html")
     except:
         return render_template("usuarios.html")
