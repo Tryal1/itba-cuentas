@@ -1,0 +1,18 @@
+﻿numero;nombre;apellido;dni;tipo;calle;numero;ciudad;provincia;pais
+1;Pedro;Sanchez;38731992;Classic;Av. Libertador ;2539;CABA;Buenos Aires;Argentina
+2;Ramiro;Perez;23248772;Classic;Vicente Lopez ;1232;CABA;Buenos Aires;Argentina
+3;Juana;Esposito;44772298;Classic;Pilara ;9870;CABA;Buenos Aires;Argentina
+4;Agustin;Obrian;1892839;Classic;9 de julio ;1221;CABA;Buenos Aires;Argentina
+5;Luz;Martinez;40928322;Classic;Maipu ;67;CABA;Buenos Aires;Argentina
+6;Emilia;Arrecife;4938992;Gold;Corrientes ;8923;CABA;Buenos Aires;Argentina
+7;Felipe;Ivanovich;4112883;Gold;Boedo ;1232;CABA;Buenos Aires;Argentina
+8;Federico;Lerendegui;39823339;Gold;Alvear  ;9870;CABA;Buenos Aires;Argentina
+9;Tobias;Oneto;3629883;Gold;Rawson  ;1221;CABA;Buenos Aires;Argentina
+10;Catalina;Aguirre;32983229;Gold;Maipu;1232;CABA;Buenos Aires;Argentina
+11;Mateo;Smith;1827387;Black;Malvinas Argentinas ;1112;CABA;Buenos Aires;Argentina
+12;Alejandro;Aranzegui;39829821;Black;9 de julio ;3231;CABA;Buenos Aires;Argentina
+13;Lucas;Zoelli;46267182;Black;Maipu ;5633;CABA;Buenos Aires;Argentina
+14;Martina;Echeverria;48287388;Black;Av. Libertador ;121;CABA;Buenos Aires;Argentina
+15;Sofía;Boedo;12983883;Black;Vicente Lopez ;987;CABA;Buenos Aires;Argentina
+502273;a;a;2;sd;ba;321;a;a;a
+479736;a;a;1;s;2;2;2;2;2
