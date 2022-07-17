@@ -43,14 +43,16 @@ def get_report(tipo_operacion, estado_operacion, tipo_cuenta, transacciones):
                     <input type="text" name="tipo_cuenta">
                     <input id = "button" type="submit" value="Enviar">
                 </form>
+            <section class="body-data">
     """
 
     # esta es la parte de los filtros utilizados que va a estar siempre en el html
     static_content = f""" 
-        <h1>Filtros Utilizados</h1> 
-        <h2>Tipo Operación: {tipo_operacion}</h2> 
-        <h2>Estado Operación: {estado_operacion}</h2> 
-        <h2>Tipo de cuenta:{tipo_cuenta} </h2> 
+            <div class="static-content">
+                <h2>Tipo Operación: {tipo_operacion}</h2> 
+                <h2>Estado Operación: {estado_operacion}</h2> 
+                <h2>Tipo de cuenta:{tipo_cuenta} </h2>
+            </div>  
     """
 
     # esta es la  que se genera en base al contenido del json, que va a cambiar segun el match
@@ -58,7 +60,8 @@ def get_report(tipo_operacion, estado_operacion, tipo_cuenta, transacciones):
     variable_content = ""
     for transaccion in transacciones:
 
-        text = f""" 
+        text = f"""
+                <div class="variable-content">
                     <h2> Nueva Transacción </h2>
                     <ul class='transaccion'>
                     <li>Estado de transaccion: {transaccion["estado"]}</li>
@@ -66,14 +69,16 @@ def get_report(tipo_operacion, estado_operacion, tipo_cuenta, transacciones):
                     <li>Saldo en cuenta: {transaccion["saldoEnCuenta"]}</li>
                     <li>Fecha: {transaccion["fecha"]}</li>
                     <li>Número de cuenta: {transaccion["cuentaNumero"]}</li>
-                    </ul>        
+                    </ul>     
+                </div>  
+            
     """
 
         variable_content += text
         
 
     # se termina el html     
-    end = """ </body>
+    end = """ </section></body>
         </html>
     """
 
