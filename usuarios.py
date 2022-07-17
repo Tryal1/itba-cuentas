@@ -22,7 +22,7 @@ class Cliente():
 
             id_cliente = random.randrange(100000, 999999)
 
-            with open(f"static/output/clientes.json", 'a') as usuarios_json:
+            with open(f"static/output/{self.nombre}_{self.apellido}.json", 'a') as usuarios_json:
                 json.dump({
                     'numero': id_cliente,
                     "nombre": self.nombre,
