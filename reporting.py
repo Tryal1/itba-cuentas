@@ -1,5 +1,6 @@
 import json
 
+
 def get_matches(tipo_operacion, estado_operacion, tipo_cuenta):
 
     with open(f"static/json/eventos_{tipo_cuenta}.json") as f:
@@ -10,12 +11,11 @@ def get_matches(tipo_operacion, estado_operacion, tipo_cuenta):
         for transaccion in data[tipo_operacion]:
 
             if(transaccion['estado'] == estado_operacion):
-                
+
                 transacciones.append(transaccion)
 
         return transacciones
-        
-               
+
 
 def get_report(tipo_operacion, estado_operacion, tipo_cuenta, transacciones):
 
@@ -75,9 +75,8 @@ def get_report(tipo_operacion, estado_operacion, tipo_cuenta, transacciones):
     """
 
         variable_content += text
-        
 
-    # se termina el html     
+    # se termina el html
     end = """ </section></body>
         </html>
     """
@@ -88,6 +87,4 @@ def get_report(tipo_operacion, estado_operacion, tipo_cuenta, transacciones):
     # se escribe el html en un archivo
     with open("templates/reporte.html", "w", encoding="utf-8") as f:
 
-            f.write(html)
-
-
+        f.write(html)
