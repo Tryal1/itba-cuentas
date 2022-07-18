@@ -20,23 +20,32 @@ class Cliente():
     #guardar json
     def guardarDatos(self):
 
+
+            json_list = []
+            with open("static/output/clientes.json") as fp:
+                 json_list = json.load(fp)
+
+            # se crea aleatoriamente un numero de cuenta
             id_cliente = random.randrange(100000, 999999)
 
-            with open(f"static/output/{self.nombre}_{self.apellido}.json", 'a') as usuarios_json:
-                json.dump({
+            json_list.append({
                     'numero': id_cliente,
                     "nombre": self.nombre,
                     "apellido": self.apellido,
                     "dni":  self.dni,
                     "tipo": self.tipo_cuenta,
-                    "direccion": {
-                        "calle": self.direccion_calle,
-                        "numero": self.direccion_numero,
-                        "ciudad": self.direccion_ciudad,
-                        "provincia": self.direccion_provincia,
-                        "pais": self.direccion_pais,
-                    },
-                }, usuarios_json)
+                    "calle": self.direccion_calle,
+                    "numero": self.direccion_numero,
+                    "ciudad": self.direccion_ciudad,
+                    "provincia": self.direccion_provincia,
+                    "pais": self.direccion_pais,
+                })
+
+            
+            with open("static/output/clientes.json", 'w') as json_file:
+                json.dump(json_list, json_file, 
+                            indent=4,  
+                            separators=(',',': '))
 
     # guarda el csv de los datos
     def guardarDatosCsv(self):
