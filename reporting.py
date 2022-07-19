@@ -3,7 +3,7 @@ import json
 
 def get_matches(tipo_operacion, estado_operacion, tipo_cuenta):
 
-    with open(f"static/json/eventos_{tipo_cuenta}.json") as f:
+    with open(f"static/output/json/output_{tipo_cuenta}.json") as f:
 
         data = json.load(f)
 
@@ -69,6 +69,7 @@ def get_report(tipo_operacion, estado_operacion, tipo_cuenta, transacciones):
                     <li>Saldo en cuenta: {transaccion["saldoEnCuenta"]}</li>
                     <li>Fecha: {transaccion["fecha"]}</li>
                     <li>Número de cuenta: {transaccion["cuentaNumero"]}</li>
+                    <li>Razón de rechazo: {transaccion["razon_de_rechazo"]}</li>
                     </ul>     
                 </div>  
             

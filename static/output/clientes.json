@@ -178,5 +178,16 @@
         "ciudad": "CABA",
         "provincia": "Buenos Aires",
         "pais": "Argentina"
+    },
+    {
+        "numero": "2322",
+        "nombre": "benjamin",
+        "apellido": "iriarte ",
+        "dni": "1234555",
+        "tipo": "gold",
+        "calle": "siempreviva",
+        "ciudad": "spingfield",
+        "provincia": "buenos aires",
+        "pais": "argentina"
     }
 ]
