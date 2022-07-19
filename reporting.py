@@ -8,9 +8,9 @@ def get_matches(tipo_operacion, estado_operacion, tipo_cuenta):
         data = json.load(f)
 
         transacciones = []
-        for transaccion in data[tipo_operacion]:
+        for transaccion in data["transacciones"]:
 
-            if(transaccion['estado'] == estado_operacion):
+            if(transaccion['estado'] == estado_operacion) and (transaccion['tipo'] == tipo_operacion if tipo_operacion != "ALL" else True):
 
                 transacciones.append(transaccion)
 
@@ -65,7 +65,7 @@ def get_report(tipo_operacion, estado_operacion, tipo_cuenta, transacciones):
                     <h2> Nueva Transacción </h2>
                     <ul class='transaccion'>
                     <li>Estado de transaccion: {transaccion["estado"]}</li>
-                    <li>Cantidad Extracciones: {transaccion["tipo"]}</li>
+                    <li>Tipo de operación: {transaccion["tipo"]}</li>
                     <li>Saldo en cuenta: {transaccion["saldoEnCuenta"]}</li>
                     <li>Fecha: {transaccion["fecha"]}</li>
                     <li>Número de cuenta: {transaccion["cuentaNumero"]}</li>

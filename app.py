@@ -23,7 +23,7 @@ def generar_reporte():
 
         try:
 
-            tipo_operacion = request.form["tipo_operacion"].lower()
+            tipo_operacion = request.form["tipo_operacion"].upper()
             estado_operacion = request.form["estado_operacion"].upper()
             tipo_cuenta = request.form["tipo_cuenta"].lower()
 
